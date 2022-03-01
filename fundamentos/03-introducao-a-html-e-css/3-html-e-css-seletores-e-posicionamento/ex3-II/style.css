@@ -19,19 +19,28 @@ div.esc{
 }
 .um{
     padding: 100px;
-    font-style: italic;
+  
 }
 .dois{
     letter-spacing: 5px;
 }
 .tres{
     text-decoration-line: line-through;
-    font-style: oblique;
+ 
 }
 .quatro{
     initial-letter: 50px;
 }
 .cinco{
     text-decoration-line: underline;
-    font-style: italic;
+  
 }
+  div:nth-of-type(2n+1) {
+    color: red;
+    font-style: italic;
+  }
+  
+  /* Parágrafos pares */
+  div:nth-of-type(2n) {
+    color: blue;
+  }
