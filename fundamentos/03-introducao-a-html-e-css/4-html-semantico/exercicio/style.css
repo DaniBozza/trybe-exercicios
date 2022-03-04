@@ -1,0 +1,9 @@
+li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 50px;
+}
+
+span{
+    font-style: italic;
+}
