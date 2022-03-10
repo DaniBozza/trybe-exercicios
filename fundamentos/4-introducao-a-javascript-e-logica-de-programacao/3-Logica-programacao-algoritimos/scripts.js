@@ -50,11 +50,13 @@ let arrayPrimos = [];
 let div = 0;
 for (let i = 0; i <= 50; i += 1) {
   arrayBase.push(i);
-  div = 0;
+  let div = 0;
+  let i = 4;
   for (let z = 0; z <= i; z += 1) {
     if (arrayBase[z] != 0) {
       if (i % arrayBase[z] === 0) {
         div += 1;
+        console.log(div);
       }
     }
   }
@@ -65,3 +67,7 @@ for (let i = 0; i <= 50; i += 1) {
 }
 console.log(arrayPrimos);
 console.log(maiorPrimo);
+
+
+
+
