@@ -28,3 +28,12 @@ for(let i = 0; i < dezDaysList.length; i += 1) {
     }
     document.getElementById('days').appendChild(dias);
 }
+
+function botao(Feriados) {
+    let button = document.createElement('button');
+    button.innerText = Feriados;
+    document.getElementsByClassName('buttons-container')[0].appendChild(button);
+}
+
+botao('Feriados')
+
