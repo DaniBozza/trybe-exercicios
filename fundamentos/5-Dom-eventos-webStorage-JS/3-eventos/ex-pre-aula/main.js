@@ -29,6 +29,19 @@ function alterarTexto(entrada) {
     }
 }
 
+let top3 = document.getElementById('my-spotrybefy');
+top3.addEventListener('dblclick', portifolio);
+
+function portifolio() {
+    window.open("https://danibozza.github.io/");
+}
+
+top3.addEventListener('mouseover', alteraCor);
+
+function alteraCor(event) {
+    event.target.style.backgroundColor = "yellow"
+}
+
 
 // 1. Copie esse arquivo e edite apenas ele;
 // 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
