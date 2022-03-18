@@ -28,12 +28,27 @@ for(let i = 0; i < dezDaysList.length; i += 1) {
     }
     document.getElementById('days').appendChild(dias);
 }
-
-function botao(Feriados) {
     let button = document.createElement('button');
+function botao(Feriados) {
     button.innerText = Feriados;
     document.getElementsByClassName('buttons-container')[0].appendChild(button);
 }
 
-botao('Feriados')
+button.addEventListener('click', corFeriados)
+let feriados = document.querySelectorAll('.holiday');
+function corFeriados() {
+    for(let i = 0; i < feriados.length; i += 1) {
+        if (feriados[i].className.includes('alter')) {
+            feriados[i].style.backgroundColor = "rgb(238,238,238)"
+            feriados[i].classList.remove('alter');
+        }
+        else{
+        feriados[i].style.backgroundColor = "rgb(220,338,300)"
+        feriados[i].className += ' alter';
+        }
+    }
+}
 
+
+
+botao('Feriados')
