@@ -11,6 +11,22 @@ thirdLi.addEventListener('click', addClass)
 function addClass(event) {
     document.querySelectorAll(".tech")[0].classList = "";
     event.target.classList = "tech";
+    document.querySelectorAll(".tech")[0].innerText = 'Aqui está a terceira tecnologia que mais gostei.';
+}
+
+document.addEventListener("keypress", function (event){
+    if(event.key === 'Enter') {
+        let nome = document.getElementById('input');
+        let entrada = nome.value;
+        alterarTexto(entrada);
+        document.getElementById('input').value = "";
+    }
+})
+
+function alterarTexto(entrada) {
+    if (entrada !== "") {
+        document.querySelectorAll(".tech")[0].innerText = "VAI LULAA";
+    }
 }
 
 
