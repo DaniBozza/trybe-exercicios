@@ -100,3 +100,21 @@ function sextou() {
 botao('Feriados')
 criarBTNSexta("Sexta-feira")
 
+//EX6
+let dia = document.getElementsByClassName('day');
+for (var i = 0; i < dia.length; i += 1) {
+    dia[i].addEventListener('mouseover', zoomIn);
+}
+function zoomIn (event) {
+   event.target.style.zoom = '150%';
+}
+
+for (var i = 0; i < dia.length; i += 1) {
+    dia[i].addEventListener('mouseout', zoomOut);
+}
+function zoomOut (event) {
+   event.target.style.zoom = '100%';
+}
+
+
+
