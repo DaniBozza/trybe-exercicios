@@ -116,5 +116,18 @@ function zoomOut (event) {
    event.target.style.zoom = '100%';
 }
 
+function adicionaTarefa(string) {
+    let tarefa = document.createElement('span');
+    tarefa.innerText = string;
+    document.getElementsByClassName('my-tasks')[0].appendChild(tarefa);
+}
+adicionaTarefa('Cozinhar')
 
+function adicionaLegenda(cor) {
+    let legenda = document.createElement('div');
+    legenda.classList = 'task';
+    legenda.style.backgroundColor = cor;
+    document.getElementsByClassName('my-tasks')[0].appendChild(legenda);
+}
+adicionaLegenda('green')
 
