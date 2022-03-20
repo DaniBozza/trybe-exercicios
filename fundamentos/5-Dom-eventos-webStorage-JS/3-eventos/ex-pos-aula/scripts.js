@@ -123,11 +123,37 @@ function adicionaTarefa(string) {
 }
 adicionaTarefa('Cozinhar')
 
+let legenda = document.createElement('div');
 function adicionaLegenda(cor) {
-    let legenda = document.createElement('div');
     legenda.classList = 'task';
     legenda.style.backgroundColor = cor;
     document.getElementsByClassName('my-tasks')[0].appendChild(legenda);
 }
-adicionaLegenda('green')
+adicionaLegenda('pink')
+
+legenda.addEventListener('click', taskSelect)
+function taskSelect() {
+    if(legenda.classList.contains('selected')){
+        legenda.classList = 'task';
+        legenda.style.borderBlockColor = 'black';
+    }
+    else {
+    legenda.classList = 'task selected';
+    legenda.style.borderBlockColor = 'red';
+    }
+}
+
+for (var i = 0; i < dia.length; i += 1) {
+    dia[i].addEventListener('click', corLegenda);
+}
+function corLegenda(event) {
+    if(legenda.classList.contains('selected') && !event.target.className.includes('alter')) {
+        event.target.style.color = legenda.style.backgroundColor;
+        event.target.className += ' alter';
+    }
+     else if(event.target.className.includes('alter')) {
+        event.target.style.color = 'rgb(119,119,119)';
+        event.target.classList.remove('alter');
+    }
+}
 
