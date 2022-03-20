@@ -157,3 +157,60 @@ function corLegenda(event) {
     }
 }
 
+// let compromisso = '';
+// document.addEventListener('keypress', function(event){
+//     if(event.keypress === 'Enter') {
+//         compromisso = document.getElementById('task-input').value;
+//         adicionaCompromisso(compromisso);
+//         console.log(compromisso);
+//         document.getElementById('task-input').value = '';
+//     }
+// });
+
+// let meusCompromissos = document.createElement('ul');
+// document.getElementById('task-input').appendChild(meusCompromissos);
+// let liCompromisso = document.createElement('li');
+// function adicionaCompromisso(compromisso) {
+//     if(compromisso !== '') {
+//         liCompromisso.innerText = compromisso;
+//         meusCompromissos.appendChild(liCompromisso);
+//     }
+//     console.log(meusCompromissos);
+// }
+
+let BTN = document.getElementById('btn-add');
+let listaCompromissos = document.createElement('ul');
+let titulo = document.createElement('h3');
+titulo.innerText = 'Meus Compromissos'
+listaCompromissos.appendChild(titulo);
+listaCompromissos.style.paddingTop = '30px';
+
+
+BTN.addEventListener('click', criaCompromissos);
+document.addEventListener('keypress', function(event){
+    if(event.key === 'Enter') {
+        criaCompromissos();
+    }
+});
+
+function criaCompromissos(){
+let compromissos = document.getElementById('task-input').value;
+let itemLista = document.createElement('li');
+itemLista.style.listStyle = "none"
+itemLista.innerText = compromissos;
+if(compromissos !== ''){
+listaCompromissos.appendChild(itemLista);
+document.getElementsByClassName('input-container')[0].appendChild(listaCompromissos);
+document.getElementById('task-input').value = '';
+}
+else{
+    alert('Você não digitou NADA, companheiro')
+}
+}
+
+
+
+
+
+
+
