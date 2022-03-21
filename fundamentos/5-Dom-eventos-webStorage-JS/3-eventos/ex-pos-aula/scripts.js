@@ -180,34 +180,30 @@ function corLegenda(event) {
 
 let BTN = document.getElementById('btn-add');
 let listaCompromissos = document.createElement('ul');
+document.getElementsByClassName('input-container')[0].appendChild(listaCompromissos);
 let titulo = document.createElement('h3');
-titulo.innerText = 'Meus Compromissos'
+titulo.innerText = 'Meus Compromissos';
 listaCompromissos.appendChild(titulo);
 listaCompromissos.style.paddingTop = '30px';
 
 
 BTN.addEventListener('click', criaCompromissos);
-document.addEventListener('keypress', function(event){
+document.getElementById('task-input').addEventListener('keypress', function(event){
     if(event.key === 'Enter') {
         criaCompromissos();
     }
 });
 
 function criaCompromissos(){
-let compromissos = document.getElementById('task-input').value;
-let itemLista = document.createElement('li');
-itemLista.style.listStyle = "none"
-itemLista.innerText = compromissos;
-if(compromissos !== ''){
-listaCompromissos.appendChild(itemLista);
-document.getElementsByClassName('input-container')[0].appendChild(listaCompromissos);
-document.getElementById('task-input').value = '';
-}
-else{
-    alert('Você não digitou NADA, companheiro')
-}
-}
+    let compromissos = document.getElementById('task-input').value;
+    if(compromissos === '') return  alert('Você não digitou NADA, companheiro');
 
+    let itemLista = document.createElement('li');
+    itemLista.style.listStyle = "none"
+    itemLista.innerText = compromissos;
+    listaCompromissos.appendChild(itemLista);
+    document.getElementById('task-input').value = '';
+}
 
 
 
